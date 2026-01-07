@@ -15,18 +15,20 @@ export const App = () => {
   const [isReverseActive, setIsReverseActive] = useState(false);
 
   const handleSortAlphabetically = () => {
-    setGoods(prev =>
-      [...prev].sort((a, b) =>
-        isReverseActive ? b.localeCompare(a) : a.localeCompare(b)),);
+    const compareAlphabetically = (a, b) =>
+      isReverseActive ? b.localeCompare(a) : a.localeCompare(b);
+
+    setGoods(prev => [...prev].sort(compareAlphabetically));
 
     setIsAlphabetActive(true);
     setIsResetVisible(true);
   };
 
   const handleSortByLength = () => {
-    setGoods(prev =>
-      [...prev].sort((a, b) =>
-        isReverseActive ? b.length - a.length : a.length - b.length,),);
+    const compareByLength = (a, b) =>
+      isReverseActive ? b.length - a.length : a.length - b.length;
+
+    setGoods(prev => [...prev].sort(compareByLength));
 
     setIsLengthActive(true);
     setIsResetVisible(true);
