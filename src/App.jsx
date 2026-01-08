@@ -21,6 +21,7 @@ export const App = () => {
     setGoods(prev => [...prev].sort(compareAlphabetically));
 
     setIsAlphabetActive(true);
+    setIsLengthActive(false);
     setIsResetVisible(true);
   };
 
@@ -31,6 +32,7 @@ export const App = () => {
     setGoods(prev => [...prev].sort(compareByLength));
 
     setIsLengthActive(true);
+    setIsLengthActive(false);
     setIsResetVisible(true);
   };
 
