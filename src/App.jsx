@@ -32,7 +32,7 @@ export const App = () => {
     setGoods(prev => [...prev].sort(compareByLength));
 
     setIsLengthActive(true);
-    setIsLengthActive(false);
+    setIsAlphabetActive(false);
     setIsResetVisible(true);
   };
 
